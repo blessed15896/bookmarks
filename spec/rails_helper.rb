@@ -30,9 +30,9 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+  # Remove this line if you're not using ActiveRecord or ActiveRecord fixture_files
   config.fixture_paths = [
-    Rails.root.join('spec/fixtures')
+    Rails.root.join('spec/fixture_files')
   ]
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
