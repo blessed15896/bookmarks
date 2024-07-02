@@ -67,3 +67,5 @@ end
 gem "rspec-rails", "~> 6.1", :groups => [:development, :test]
 
 gem "factory_bot_rails", "~> 6.4", :groups => [:development, :test]
+
+gem "annotate", "~> 3.2", :group => :development
