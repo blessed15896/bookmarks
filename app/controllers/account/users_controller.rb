@@ -38,7 +38,7 @@ class Account::UsersController < ApplicationController
   def update
     respond_to do |format|
       if @account_user.update(account_user_params)
-        format.html { redirect_to account_user_url(@account_user), notice: "User was successfully updated." }
+        format.html { redirect_to root_url, notice: "Profile updated successfully" }
         format.json { render :show, status: :ok, location: @account_user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,13 +58,14 @@ class Account::UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_account_user
-      @account_user = Account::User.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def account_user_params
-      params.require(:account_user).permit(:first_name, :last_name, :email, :date_of_birth, :photo, :password, :password_confirmation)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_account_user
+    @account_user = Account::User.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def account_user_params
+    params.require(:account_user).permit(:first_name, :last_name, :email, :date_of_birth, :photo)
+  end
 end

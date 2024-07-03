@@ -21,6 +21,5 @@ class Account::User < ApplicationRecord
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
   validates :first_name, :last_name, length: { minimum: 3 }
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, allow_blank: true
 end
-

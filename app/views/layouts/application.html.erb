@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookmarks</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= render 'layouts/head' %>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+    <section class="section">
+      <%= render 'layouts/flash_messages' %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>

@@ -1,0 +1,49 @@
+ <nav class="navbar is-primary">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <strong>Bookmarks</strong>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <% if logged_in? %>
+          <%= link_to 'Dashboard', root_path, class: 'navbar-item' %>
+          <a class="navbar-item">
+            Images
+          </a>
+        <% end %>
+      </div>
+      <div class="navbar-end">
+        <% if logged_in? %>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Account
+            </a>
+            <div class="navbar-dropdown">
+              <%= link_to 'Edit Profile', edit_account_user_path(current_user), class: 'navbar-item' %>
+              <%= link_to 'Change Password', account_password_edit_path, class: 'navbar-item' %>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Logout
+              </a>
+            </div>
+          </div>
+        <% else %>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-info is-light">Login</a>
+              <a class="button is-link">Register</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>

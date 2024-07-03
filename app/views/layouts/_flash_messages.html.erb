@@ -1,0 +1,10 @@
+<% if notice.present? %>
+  <div class="notification is-success is-light py-2 mb-5">
+    <strong><%= notice %></strong>
+  </div>
+<% end %>
+<% if alert.present? %>
+  <div class="notification is-danger is-light py-2 mb-5">
+    <strong><%= alert %></strong>
+  </div>
+<% end %>
